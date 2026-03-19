@@ -24,3 +24,7 @@ jobs:
       - name: Gerar TAG automática
         run: |
           echo "Simulando criação de tag"
+      
+      - name: Notificar erro
+        if: failure()
+        run: echo "Erro no pipeline!"
