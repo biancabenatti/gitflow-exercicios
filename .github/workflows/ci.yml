@@ -3,8 +3,6 @@ name: CI
 on:
   push:
     branches: [develop]
-  pull_request:
-    branches: [develop]
 
 jobs:
   build:
@@ -22,3 +20,7 @@ jobs:
 
       - name: Test
         run: echo "Rodando testes..."
+
+      - name: Gerar TAG automática
+        run: |
+          echo "Simulando criação de tag"
