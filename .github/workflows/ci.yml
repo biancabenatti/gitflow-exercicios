@@ -35,12 +35,12 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: seuemail@gmail.com
+          username: bianca071995@gmail.com
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "Erro no pipeline 🚨"
           body: "O pipeline falhou. Verifique o GitHub Actions."
           to: bianca071995@gmail.com
-          from: seuemail@gmail.com
+          from: bianca071995@gmail.com
       
-      - name: Forçar erro
+      - name: Força erro
         run: exit 1
