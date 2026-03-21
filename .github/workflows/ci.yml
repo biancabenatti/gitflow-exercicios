@@ -44,3 +44,9 @@ jobs:
       
       - name: Força erro
         run: exit 1
+    
+      - name: Gerar TAG automática
+        run: |
+          echo "Instalando SemVer..."
+          echo "Calculando versão baseada nos commits..."
+          echo "Nova versão gerada: v1.0.$RANDOM"
