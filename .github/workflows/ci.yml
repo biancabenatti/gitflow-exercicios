@@ -28,3 +28,19 @@ jobs:
       - name: Notificar erro
         if: failure()
         run: echo "Erro no pipeline!"
+
+      - name: Enviar email se falhar
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: seuemail@gmail.com
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Erro no pipeline 🚨"
+          body: "O pipeline falhou. Verifique o GitHub Actions."
+          to: bianca071995@gmail.com
+          from: seuemail@gmail.com
+      
+      - name: Forçar erro
+        run: exit 1
